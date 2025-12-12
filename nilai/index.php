@@ -49,7 +49,6 @@ include('../componen/database.php');
                                 echo "<td>" . $row['nilai'] . "</td>";
                                 echo "<td>" . $row['nilaiHuruf'] . "</td>";
                                 echo "<td>";
-                                // PERHATIKAN BAGIAN INI MAR! GUA GANTI 'id' JADI 'id_nilai'
                                 echo "<a href='edit.php?id_nilai=" . $row['id_nilai'] . "' class='btn btn-sm btn-primary me-1'>Edit</a>";
                                 echo "<a href='hapus.php?id_nilai=" . $row['id_nilai'] . "' class='btn btn-sm btn-danger' onclick=\"return confirm('Yakin ingin menghapus nilai ini?');\">Hapus</a>";
                                 echo "</td>";

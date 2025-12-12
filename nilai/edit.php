@@ -4,24 +4,20 @@ include('../componen/topbar.php');
 include('../componen/sidebar.php');
 include('../componen/database.php');
 
-// --- BAGIAN INI YANG LU LEWATIN MULU MAR ---
-// Cek apakah ada ID di URL. Kalau ga ada, tendang ke index.
+
 if (!isset($_GET['id_nilai'])) {
     echo "<script>alert('Akses dilarang! Pilih data dulu dari tabel.'); window.location='index.php';</script>";
-    exit; // Stop script biar ga lanjut ke bawah
+    exit;
 }
 
 $id_nilai = $_GET['id_nilai'];
-// Ambil data nilai berdasarkan ID
 $query = mysqli_query($koneksi, "SELECT * FROM tbl_nilai WHERE id_nilai = '$id_nilai'");
 $data  = mysqli_fetch_array($query);
 
-// Cek kalo datanya ga ketemu di database
 if (!$data) {
     echo "<script>alert('Data tidak ditemukan!'); window.location='index.php';</script>";
     exit;
 }
-// ---------------------------------------------
 
 if (isset($_POST['update'])) {
     $nim        = $_POST['nim'];
@@ -55,7 +51,7 @@ if (isset($_POST['update'])) {
                             <?php
                             $mhs = mysqli_query($koneksi, "SELECT * FROM tbl_mahasiswa");
                             while ($m = mysqli_fetch_array($mhs)) {
-                                // Logika biar pilihannya otomatis ke-select
+                    
                                 $selected = ($data['nim'] == $m['nim']) ? 'selected' : '';
                                 echo "<option value='$m[nim]' $selected>$m[nim] - $m[nama]</option>";
                             }
