@@ -32,4 +32,5 @@ Repositori ini digunkan untuk pengimpulan tugas **Koneksi Database**. Untuk Pemo
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo" />
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" height="40" alt="google logo" />
+
 </div>
